@@ -24,7 +24,8 @@ with open("output.csv", mode="w", encoding="utf-8") as csv_file:
         # print(yt.description)
 
         writer.writerow({
-            "Name": yt.title,
+            "Status": "Not started yet",
+            "Name": yt.title.replace(",", "."),  # remove comma from string to fix import to notion issue
             "Author": yt.author,
             "Length": time.strftime("%H:%M:%S", time.gmtime(yt.length)),
             "Link": url,
